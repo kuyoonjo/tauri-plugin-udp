@@ -5,9 +5,9 @@ authors = [ "kuyoonjo" ]
 description = "UDP Socket for Tauri App"
 edition = "2021"
 license = "MIT"
-rust-version = "1.70"
+repository = "https://github.com/kuyoonjo/tauri-plugin-udp"
 keywords = ["tauri", "plugin", "udp"]
-exclude = ["/examples", "/webview-dist", "/webview-src", "/node_modules"]
+exclude = ["/examples", "/webview-dist", "/webview-src", "node_modules"]
 readme = "README.md"
 links = "tauri-plugin-udp"
 
