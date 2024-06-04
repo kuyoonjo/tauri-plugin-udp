@@ -1,6 +1,6 @@
 {
   "name": "@kuyoonjo/tauri-plugin-udp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "You",
   "description": "",
   "type": "module",
@@ -10,7 +10,7 @@
   "main": "webview-dist/index.js",
   "types": "webview-dist/index.d.ts",
   "scripts": {
-    "build": "tsc && cat webview-src/event.d.ts webview-dist/index.d.ts > webview-dist/bundle.d.ts && mv webview-dist/bundle.d.ts webview-dist/index.d.ts",
+    "build": "tsc",
     "prepublishOnly": "pnpm build",
     "pretest": "pnpm build"
   },

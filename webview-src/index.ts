@@ -1,4 +1,5 @@
 import { invoke } from '@tauri-apps/api/core';
+import { EventCallback, Options, listen as _listen } from '@tauri-apps/api/event';
 import { Buffer } from 'buffer';
 
 /**
@@ -35,4 +36,14 @@ export async function send(id: string, target: string, message: string | number[
     target,
     message: typeof message === 'string' ? Array.from(Buffer.from(message)) : message,
   });
+}
+
+export interface Payload {
+  id: string;
+  addr: string;
+  data: number[];
+}
+
+export function listen(handler: EventCallback<Payload>, options?: Options) {
+  return _listen('plugin://udp', handler, options);
 }
