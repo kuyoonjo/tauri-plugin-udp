@@ -1,5 +1,7 @@
 # tauri-plugin-udp
 
+This plugin only works with Tauri 2.x only.
+
 ## Install
 
 ```bash
