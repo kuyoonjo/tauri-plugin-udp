@@ -5,7 +5,13 @@
 ```bash
 cargo add tauri-plugin-udp
 ```
+```bash
+npm i @kuyoonjo/tauri-plugin-udp
+```
 
+## Usage
+
+### rust
 ```rust
 
 tauri::Builder::default()
@@ -13,8 +19,7 @@ tauri::Builder::default()
     ...
 ```
 
-## Usage
-
+### javascript
 ```javascript
 import { bind, send } from "@kuyoonjo/tauri-plugin-udp";
 import { listen } from "@tauri-apps/api/event";
