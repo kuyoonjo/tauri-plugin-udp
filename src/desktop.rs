@@ -2,7 +2,7 @@ use std::{collections::HashMap, sync::Arc};
 
 use debug_print::debug_println;
 use lazy_static::lazy_static;
-use tauri::{Manager, Runtime};
+use tauri::{Manager, Runtime, Emitter};
 use tokio::{
     io,
     net::UdpSocket,
