@@ -35,6 +35,22 @@ await listen("plugin://udp", (x) => console.log(x.payload));
 
 ```
 
+### permissions
+
+add `"udp:default"` into `"permissions"` list of `src-tauri\capabilities\default.json`
+
+```json
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  ...
+  "permissions": [
+    "core:default",
+    ...
+    "udp:default"
+  ]
+}
+```
+
 ## Support
 
 | MacOS | Linux | Windows |
