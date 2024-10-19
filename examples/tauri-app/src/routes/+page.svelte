@@ -1,5 +1,5 @@
 <script>
-  import * as udp from "@kuyoonjo/tauri-plugin-udp";
+  import * as udp from "../../../../webview-dist";
   import { listen } from "@tauri-apps/api/event";
   import { onMount } from "svelte";
 

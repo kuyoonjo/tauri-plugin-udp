@@ -1,25 +1,32 @@
 import { defineConfig } from "vite";
-import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { internalIpV4Sync } from 'internal-ip'
+import { sveltekit } from "@sveltejs/kit/vite";
 
-const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
+// @ts-expect-error process is a nodejs global
+const host = process.env.TAURI_DEV_HOST;
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [svelte()],
+export default defineConfig(async () => ({
+  plugins: [sveltekit()],
 
-  // Vite optons tailored for Tauri development and only applied in `tauri dev` or `tauri build`
-  // prevent vite from obscuring rust errors
+  // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
+  //
+  // 1. prevent vite from obscuring rust errors
   clearScreen: false,
-  // tauri expects a fixed port, fail if that port is not available
+  // 2. tauri expects a fixed port, fail if that port is not available
   server: {
-    host: mobile ? "0.0.0.0" : false,
     port: 1420,
     strictPort: true,
-    hmr: mobile ? {
-      protocol: 'ws',
-      host: internalIpV4Sync(),
-      port: 1421
-    } : undefined,
+    host: host || false,
+    hmr: host
+      ? {
+          protocol: "ws",
+          host,
+          port: 1421,
+        }
+      : undefined,
+    watch: {
+      // 3. tell vite to ignore watching `src-tauri`
+      ignored: ["**/src-tauri/**"],
+    },
   },
-})
+}));
