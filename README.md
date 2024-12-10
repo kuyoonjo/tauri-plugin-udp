@@ -72,4 +72,4 @@ pnpm tauri dev
 
 | MacOS | Linux | Windows | Android | iOS |
 | ----- | ----- | ------- | ------- | ------- |
-| ✅    | ✅    | ✅      | ✅     | hasn't been tested |
+| ✅    | ✅    | ✅      | ✅     | ✅ (tested on simulator) |
