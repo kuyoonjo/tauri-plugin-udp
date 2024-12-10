@@ -70,6 +70,6 @@ pnpm tauri dev
 
 ## Support
 
-| MacOS | Linux | Windows |
-| ----- | ----- | ------- |
-| ✅    | ✅    | ✅      |
+| MacOS | Linux | Windows | Android | iOS |
+| ----- | ----- | ------- | ------- | ------- |
+| ✅    | ✅    | ✅      | ✅     | hasn't been tested |
