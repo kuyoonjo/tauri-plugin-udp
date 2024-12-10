@@ -51,6 +51,23 @@ add `"udp:default"` into `"permissions"` list of `src-tauri\capabilities\default
 }
 ```
 
+## How to run example
+
+### build plugin first to gen webview-dist
+
+```shell
+pnpm i
+pnpm build
+```
+
+### entry example and run
+
+```shell
+cd examples/tauri-app-vue
+pnpm i
+pnpm tauri dev
+```
+
 ## Support
 
 | MacOS | Linux | Windows |
